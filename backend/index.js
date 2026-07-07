@@ -9,17 +9,17 @@ import { errorHandler } from "./src/middleware/error-handler.js";
 
 const app = express();
 
-// --- UPDATE THIS CORS BLOCK ---
+// --- CORS CONFIGURATION ---
 const allowedOrigins = [
-  "https://gizachew-chatgpt-clone.up.railway.app/", // For local development testing
-  // "https://chatgptch.netlify.app" // Your live production Netlify app
+  "http://localhost:5173", // Vite local development
+  "https://gizachew-chat-gpt-clone.vercel.app", // Vercel frontend
 ];
 
 app.use(
   cors({
     origin: function (origin, callback) {
-      // Allow requests with no origin (like mobile apps, Postman, or server-to-server)
-      if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      // Allow requests without origin (Postman, mobile apps, server-to-server)
+      if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
         callback(new Error("Not allowed by CORS"));

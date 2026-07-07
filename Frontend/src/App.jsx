@@ -71,7 +71,9 @@ function App() {
         });
       }
     } catch (error) {
-      console.error("Error posting conversation:", error);
+      console.error("FULL ERROR:", error);
+      console.error("STATUS:", error.response?.status);
+      console.error("DATA:", error.response?.data);
 
       // Extract error message from backend response or use a realistic fallback
       const errorMessage =
