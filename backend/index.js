@@ -11,7 +11,7 @@ const app = express();
 
 // --- UPDATE THIS CORS BLOCK ---
 const allowedOrigins = [
-  "http://localhost:5173", // For local development testing
+  "https://gizachew-chatgpt-clone.up.railway.app/", // For local development testing
   // "https://chatgptch.netlify.app" // Your live production Netlify app
 ];
 
