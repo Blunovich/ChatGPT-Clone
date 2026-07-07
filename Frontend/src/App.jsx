@@ -7,9 +7,10 @@ import ChatInput from "./components/ChatInput/ChatInput";
 import "./App.css";
 
 // const API_BASE_URL = "http://localhost:3777/api";
-const API_BASE_URL =
-  `${import.meta.env.VITE_API_URL}/api` ||
-  "https://gizachew-chatgpt-clone.up.railway.app/api";
+const API_BASE_URL = import.meta.env.VITE_API_URL
+  ? `${import.meta.env.VITE_API_URL}/api`
+  : "https://gizachew-chatgpt-clone.up.railway.app/api";
+
 function App() {
   const [conversations, setConversations] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
